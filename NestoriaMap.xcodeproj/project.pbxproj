@@ -24,6 +24,7 @@
 		FCB45A94186B955B001DC91E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB45A70186B955A001DC91E /* UIKit.framework */; };
 		FCB45A9C186B955B001DC91E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCB45A9A186B955B001DC91E /* InfoPlist.strings */; };
 		FCB45A9E186B955B001DC91E /* NestoriaMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB45A9D186B955B001DC91E /* NestoriaMapTests.m */; };
+		FCB76AAD18734EB40030EBA8 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB76AAC18734EB40030EBA8 /* DetailViewController.m */; };
 		FCF775D9186C98280087C2A1 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF775D8186C98280087C2A1 /* MapAnnotation.m */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 		FCB45A99186B955B001DC91E /* NestoriaMapTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NestoriaMapTests-Info.plist"; sourceTree = "<group>"; };
 		FCB45A9B186B955B001DC91E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FCB45A9D186B955B001DC91E /* NestoriaMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NestoriaMapTests.m; sourceTree = "<group>"; };
+		FCB76AAB18734EB40030EBA8 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		FCB76AAC18734EB40030EBA8 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		FCF775D7186C98280087C2A1 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
 		FCF775D8186C98280087C2A1 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +135,8 @@
 				FCB45A81186B955A001DC91E /* Main_iPad.storyboard */,
 				FCB45A84186B955A001DC91E /* FirstViewController.h */,
 				FCB45A85186B955A001DC91E /* FirstViewController.m */,
+				FCB76AAB18734EB40030EBA8 /* DetailViewController.h */,
+				FCB76AAC18734EB40030EBA8 /* DetailViewController.m */,
 				FCB45A87186B955A001DC91E /* SecondViewController.h */,
 				FCB45A88186B955A001DC91E /* SecondViewController.m */,
 				FCF775D7186C98280087C2A1 /* MapAnnotation.h */,
@@ -274,6 +279,7 @@
 				FCB45A86186B955A001DC91E /* FirstViewController.m in Sources */,
 				FCB45A79186B955A001DC91E /* main.m in Sources */,
 				FCF775D9186C98280087C2A1 /* MapAnnotation.m in Sources */,
+				FCB76AAD18734EB40030EBA8 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

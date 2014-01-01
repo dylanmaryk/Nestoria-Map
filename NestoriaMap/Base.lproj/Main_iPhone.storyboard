@@ -24,13 +24,34 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="u1e-5L-l1D"/>
+                    <navigationItem key="navigationItem" id="op1-bv-17u"/>
                     <connections>
-                        <outlet property="mapView" destination="jGa-xd-ysE" id="qAB-F8-yE8"/>
+                        <outlet property="propertyMapView" destination="jGa-xd-ysE" id="DQX-6R-BoD"/>
+                        <segue destination="cyT-og-WW9" kind="modal" identifier="showPropertyDetail" modalTransitionStyle="coverVertical" id="9nR-aY-dIS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="653" y="-135"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Uy2-Nk-GMV">
+            <objects>
+                <viewController id="cyT-og-WW9" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D9E-Gb-L4h"/>
+                        <viewControllerLayoutGuide type="bottom" id="W0J-wX-1Ty"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qg9-IB-QwS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LSN-dp-ejJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9FA-C8-r03" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1131" y="-274"/>
         </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="ot8-2e-RuS">

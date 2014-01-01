@@ -10,6 +10,7 @@
 
 @implementation MapAnnotation
 
+@synthesize propertyId;
 @synthesize title;
 @synthesize subtitle;
 @synthesize coordinate;

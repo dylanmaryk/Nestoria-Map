@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "DetailViewController.h"
 #import "MapAnnotation.h"
 
 @interface FirstViewController : UIViewController <NSURLSessionDelegate, MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet MKMapView *propertyMapView;
+@property (strong, nonatomic) NSMutableArray *listingsArray;
 
 @end
