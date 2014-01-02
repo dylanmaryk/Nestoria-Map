@@ -10,9 +10,15 @@
 
 @implementation MapAnnotation
 
-@synthesize propertyId;
 @synthesize title;
 @synthesize subtitle;
 @synthesize coordinate;
+@synthesize bathroomNo;
+@synthesize bedroomNo;
+@synthesize dataSrc;
+@synthesize imgUrl;
+@synthesize listerName;
+@synthesize listerUrl;
+@synthesize price;
 
 @end

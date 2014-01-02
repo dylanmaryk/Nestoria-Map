@@ -10,15 +10,27 @@
 #import <MapKit/MapKit.h>
 
 @interface MapAnnotation : NSObject <MKAnnotation> {
-    int propertyId;
     NSString *title;
     NSString *subtitle;
     CLLocationCoordinate2D coordinate;
+    NSString *bathroomNo;
+    NSString *bedroomNo;
+    NSString *dataSrc;
+    NSString *imgUrl;
+    NSString *listerName;
+    NSString *listerUrl;
+    NSString *price;
 }
 
-@property (nonatomic) int propertyId;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
+@property (nonatomic, copy) NSString *bathroomNo;
+@property (nonatomic, copy) NSString *bedroomNo;
+@property (nonatomic, copy) NSString *dataSrc;
+@property (nonatomic, copy) NSString *imgUrl;
+@property (nonatomic, copy) NSString *listerName;
+@property (nonatomic, copy) NSString *listerUrl;
+@property (nonatomic, copy) NSString *price;
 
 @end

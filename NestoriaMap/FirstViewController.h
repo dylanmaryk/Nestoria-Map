@@ -15,6 +15,5 @@
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet MKMapView *propertyMapView;
-@property (strong, nonatomic) NSMutableArray *listingsArray;
 
 @end

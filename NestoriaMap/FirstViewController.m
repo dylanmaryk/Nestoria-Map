@@ -16,7 +16,6 @@
 
 @synthesize locationManager;
 @synthesize propertyMapView;
-@synthesize listingsArray;
 
 - (void)viewDidLoad
 {
@@ -59,26 +58,20 @@
     
     NSArray *listings = [[json valueForKey:@"response"] valueForKey:@"listings"];
     
-    int i = 0;
-    
     for (MapAnnotation *property in listings) {
-        NSMutableArray *listingsArrayProperty = [NSMutableArray array];
-        [listingsArrayProperty addObject:[property valueForKey:@"title"]];
-        [listingsArrayProperty addObject:[property valueForKey:@"summary"]];
-        [listingsArrayProperty addObject:[property valueForKey:@"latitude"]];
-        [listingsArrayProperty addObject:[property valueForKey:@"longitude"]];
-        
-        [listingsArray addObject:listingsArrayProperty];
-        
         MapAnnotation *temp = [[MapAnnotation alloc] init];
-        [temp setPropertyId:i];
-        [temp setTitle:[property valueForKey:@"title"]];
-        [temp setSubtitle:[property valueForKey:@"summary"]];
-        [temp setCoordinate:CLLocationCoordinate2DMake([[property valueForKey:@"latitude"] floatValue], [[property valueForKey:@"longitude"] floatValue])];
+        temp.title = [property valueForKey:@"title"];
+        temp.subtitle = [property valueForKey:@"summary"];
+        temp.coordinate = CLLocationCoordinate2DMake([[property valueForKey:@"latitude"] floatValue], [[property valueForKey:@"longitude"] floatValue]);
+        temp.bathroomNo = [property valueForKey:@"bathroom_number"];
+        temp.bedroomNo = [property valueForKey:@"bedroom_number"];
+        temp.dataSrc = [property valueForKey:@"datasource_name"];
+        temp.imgUrl = [property valueForKey:@"img_url"];
+        temp.listerName = [property valueForKey:@"lister_name"];
+        temp.listerUrl = [property valueForKey:@"lister_url"];
+        temp.price = [property valueForKey:@"price_formatted"];
         
         [annoationsArray addObject:temp];
-        
-        ++i;
     }
     
     return annoationsArray;
