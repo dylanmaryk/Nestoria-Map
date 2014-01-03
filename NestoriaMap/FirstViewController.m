@@ -16,6 +16,7 @@
 
 @synthesize locationManager;
 @synthesize propertyMapView;
+@synthesize popoverController;
 
 - (void)viewDidLoad
 {
@@ -104,9 +105,15 @@
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    MapAnnotation *annotation = (MapAnnotation *)[view annotation];
+    // MapAnnotation *annotation = (MapAnnotation *)[view annotation];
     
-    // [self performSegueWithIdentifier:@"showPropertyDetail" sender:self];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        DetailViewController *detailViewController = [[DetailViewController alloc] init];
+        
+        popoverController = [[UIPopoverController alloc] initWithContentViewController:detailViewController];
+        [popoverController presentPopoverFromRect:view.frame inView:mapView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    } else
+        [self performSegueWithIdentifier:@"showPropertyDetail" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

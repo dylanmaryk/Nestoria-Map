@@ -17,7 +17,6 @@
 		FCB45A80186B955A001DC91E /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB45A7E186B955A001DC91E /* Main_iPhone.storyboard */; };
 		FCB45A83186B955A001DC91E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB45A81186B955A001DC91E /* Main_iPad.storyboard */; };
 		FCB45A86186B955A001DC91E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB45A85186B955A001DC91E /* FirstViewController.m */; };
-		FCB45A89186B955A001DC91E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB45A88186B955A001DC91E /* SecondViewController.m */; };
 		FCB45A8B186B955A001DC91E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB45A8A186B955A001DC91E /* Images.xcassets */; };
 		FCB45A92186B955B001DC91E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB45A91186B955B001DC91E /* XCTest.framework */; };
 		FCB45A93186B955B001DC91E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB45A6C186B9559001DC91E /* Foundation.framework */; };
@@ -55,8 +54,6 @@
 		FCB45A82186B955A001DC91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		FCB45A84186B955A001DC91E /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		FCB45A85186B955A001DC91E /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		FCB45A87186B955A001DC91E /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		FCB45A88186B955A001DC91E /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		FCB45A8A186B955A001DC91E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FCB45A90186B955B001DC91E /* NestoriaMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NestoriaMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB45A91186B955B001DC91E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -137,8 +134,6 @@
 				FCB45A85186B955A001DC91E /* FirstViewController.m */,
 				FCB76AAB18734EB40030EBA8 /* DetailViewController.h */,
 				FCB76AAC18734EB40030EBA8 /* DetailViewController.m */,
-				FCB45A87186B955A001DC91E /* SecondViewController.h */,
-				FCB45A88186B955A001DC91E /* SecondViewController.m */,
 				FCF775D7186C98280087C2A1 /* MapAnnotation.h */,
 				FCF775D8186C98280087C2A1 /* MapAnnotation.m */,
 				FCB45A8A186B955A001DC91E /* Images.xcassets */,
@@ -274,7 +269,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCB45A89186B955A001DC91E /* SecondViewController.m in Sources */,
 				FCB45A7D186B955A001DC91E /* AppDelegate.m in Sources */,
 				FCB45A86186B955A001DC91E /* FirstViewController.m in Sources */,
 				FCB45A79186B955A001DC91E /* main.m in Sources */,
