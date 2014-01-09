@@ -9,18 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-@interface MapAnnotation : NSObject <MKAnnotation> {
-    NSString *title;
-    NSString *subtitle;
-    CLLocationCoordinate2D coordinate;
-    NSString *bathroomNo;
-    NSString *bedroomNo;
-    NSString *dataSrc;
-    NSString *imgUrl;
-    NSString *listerName;
-    NSString *listerUrl;
-    NSString *price;
-}
+@interface MapAnnotation : NSObject <MKAnnotation>
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;

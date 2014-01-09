@@ -38,9 +38,9 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    NSArray *annoations = [self parseJSON:newLocation];
+    NSArray *annotations = [self parseJSON:newLocation];
     
-    [propertyMapView addAnnotations:annoations];
+    [propertyMapView addAnnotations:annotations];
 }
 
 - (NSMutableArray *)parseJSON:(CLLocation *)location
@@ -49,7 +49,7 @@
     
     NSData *data = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:url]];
     
-    NSMutableArray *annoationsArray = [[NSMutableArray alloc] init];
+    NSMutableArray *annotationsArray = [[NSMutableArray alloc] init];
     
     NSError *error = nil;
     
@@ -72,10 +72,10 @@
         temp.listerUrl = [property valueForKey:@"lister_url"];
         temp.price = [property valueForKey:@"price_formatted"];
         
-        [annoationsArray addObject:temp];
+        [annotationsArray addObject:temp];
     }
     
-    return annoationsArray;
+    return annotationsArray;
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
@@ -105,20 +105,41 @@
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    // MapAnnotation *annotation = (MapAnnotation *)[view annotation];
+    MapAnnotation *annotation = (MapAnnotation *)[view annotation];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        DetailViewController *detailViewController = [[DetailViewController alloc] init];
+        DetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"propertyDetailController"];
+        [detailViewController setPropertyTitleText:annotation.title];
+        [detailViewController setPropertySubtitleText:annotation.subtitle];
+        [detailViewController setListerNameText:annotation.listerName];
+        [detailViewController setPriceText:annotation.price];
+        [detailViewController setDataSrcText:annotation.dataSrc];
+        [detailViewController setBathroomNoText:annotation.bathroomNo];
+        [detailViewController setBedroomNoText:annotation.bedroomNo];
+        [detailViewController setListerUrlText:annotation.listerUrl];
+        [detailViewController setImgUrlText:annotation.imgUrl];
         
         popoverController = [[UIPopoverController alloc] initWithContentViewController:detailViewController];
         [popoverController presentPopoverFromRect:view.frame inView:mapView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        
+        [mapView deselectAnnotation:annotation animated:YES];
     } else
-        [self performSegueWithIdentifier:@"showPropertyDetail" sender:self];
+        [self performSegueWithIdentifier:@"showPropertyDetail" sender:annotation];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    MapAnnotation *view = sender;
     
+    [segue.destinationViewController setPropertyTitleText:view.title];
+    [segue.destinationViewController setPropertySubtitleText:view.subtitle];
+    [segue.destinationViewController setListerNameText:view.listerName];
+    [segue.destinationViewController setPriceText:view.price];
+    [segue.destinationViewController setDataSrcText:view.dataSrc];
+    [segue.destinationViewController setBathroomNoText:view.bathroomNo];
+    [segue.destinationViewController setBedroomNoText:view.bedroomNo];
+    [segue.destinationViewController setListerUrlText:view.listerUrl];
+    [segue.destinationViewController setImgUrlText:view.imgUrl];
 }
 
 - (void)didReceiveMemoryWarning
