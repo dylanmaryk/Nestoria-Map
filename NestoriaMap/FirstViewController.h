@@ -15,6 +15,12 @@
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet MKMapView *propertyMapView;
-@property (strong, nonatomic) UIPopoverController *popoverController;
+@property (nonatomic, retain) UIPopoverController *popoverController;
+@property (nonatomic, assign) NSString *listingTypeSelection;
+@property (nonatomic, assign) NSInteger minPriceSelection;
+@property (nonatomic, assign) NSInteger maxPriceSelection;
+@property (nonatomic, assign) NSInteger bedroomsSelection;
+@property (nonatomic, assign) NSInteger resultsSelection;
+@property (nonatomic, retain) CLLocation *newestLocation;
 
 @end

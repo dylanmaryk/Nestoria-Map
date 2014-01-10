@@ -17,10 +17,22 @@
 @synthesize locationManager;
 @synthesize propertyMapView;
 @synthesize popoverController;
+@synthesize listingTypeSelection;
+@synthesize minPriceSelection;
+@synthesize maxPriceSelection;
+@synthesize bedroomsSelection;
+@synthesize resultsSelection;
+@synthesize newestLocation;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    listingTypeSelection = @"buy";
+    minPriceSelection = 0;
+    maxPriceSelection = 999999999;
+    bedroomsSelection = 0;
+    resultsSelection = 20;
     
     propertyMapView.delegate = self;
     
@@ -31,6 +43,14 @@
     [locationManager startUpdatingLocation];
 }
 
+- (void)performSearch
+{
+    NSArray *annotations = [self parseJSON:newestLocation];
+    
+    [propertyMapView removeAnnotations:propertyMapView.annotations];
+    [propertyMapView addAnnotations:annotations];
+}
+
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     [self.propertyMapView setRegion:MKCoordinateRegionMakeWithDistance([userLocation coordinate], 500, 500) animated:YES];
@@ -38,14 +58,21 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    NSArray *annotations = [self parseJSON:newLocation];
+    newestLocation = newLocation;
     
-    [propertyMapView addAnnotations:annotations];
+    [self performSearch];
 }
 
 - (NSMutableArray *)parseJSON:(CLLocation *)location
 {
-    NSString *url = [NSString stringWithFormat:@"http://api.nestoria.co.uk/api?country=uk&pretty=1&action=search_listings&centre_point=%f,%f&encoding=json", location.coordinate.latitude, location.coordinate.longitude];
+    NSString *minimumBedrooms;
+    
+    if (bedroomsSelection == 0)
+        minimumBedrooms = @"";
+    else
+        minimumBedrooms = @"&bedroom_min=0";
+    
+    NSString *url = [NSString stringWithFormat:@"http://api.nestoria.co.uk/api?country=uk&pretty=1&action=search_listings&centre_point=%f,%f&encoding=json&listing_type=%@&price_min=%d&price_max=%d%@&bedroom_max=%d&number_of_results=%d", location.coordinate.latitude, location.coordinate.longitude, listingTypeSelection, minPriceSelection, maxPriceSelection, minimumBedrooms, bedroomsSelection, resultsSelection];
     
     NSData *data = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:url]];
     
@@ -129,17 +156,19 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    MapAnnotation *view = sender;
-    
-    [segue.destinationViewController setPropertyTitleText:view.title];
-    [segue.destinationViewController setPropertySubtitleText:view.subtitle];
-    [segue.destinationViewController setListerNameText:view.listerName];
-    [segue.destinationViewController setPriceText:view.price];
-    [segue.destinationViewController setDataSrcText:view.dataSrc];
-    [segue.destinationViewController setBathroomNoText:view.bathroomNo];
-    [segue.destinationViewController setBedroomNoText:view.bedroomNo];
-    [segue.destinationViewController setListerUrlText:view.listerUrl];
-    [segue.destinationViewController setImgUrlText:view.imgUrl];
+    if ([[segue identifier] isEqualToString:@"showPropertyDetail"]) {
+        MapAnnotation *view = sender;
+        
+        [segue.destinationViewController setPropertyTitleText:view.title];
+        [segue.destinationViewController setPropertySubtitleText:view.subtitle];
+        [segue.destinationViewController setListerNameText:view.listerName];
+        [segue.destinationViewController setPriceText:view.price];
+        [segue.destinationViewController setDataSrcText:view.dataSrc];
+        [segue.destinationViewController setBathroomNoText:view.bathroomNo];
+        [segue.destinationViewController setBedroomNoText:view.bedroomNo];
+        [segue.destinationViewController setListerUrlText:view.listerUrl];
+        [segue.destinationViewController setImgUrlText:view.imgUrl];
+    }
 }
 
 - (void)didReceiveMemoryWarning

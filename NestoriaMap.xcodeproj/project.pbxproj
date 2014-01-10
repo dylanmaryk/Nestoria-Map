@@ -17,13 +17,14 @@
 		FCB45A80186B955A001DC91E /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB45A7E186B955A001DC91E /* Main_iPhone.storyboard */; };
 		FCB45A83186B955A001DC91E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB45A81186B955A001DC91E /* Main_iPad.storyboard */; };
 		FCB45A86186B955A001DC91E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB45A85186B955A001DC91E /* FirstViewController.m */; };
-		FCB45A8B186B955A001DC91E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB45A8A186B955A001DC91E /* Images.xcassets */; };
 		FCB45A92186B955B001DC91E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB45A91186B955B001DC91E /* XCTest.framework */; };
 		FCB45A93186B955B001DC91E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB45A6C186B9559001DC91E /* Foundation.framework */; };
 		FCB45A94186B955B001DC91E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB45A70186B955A001DC91E /* UIKit.framework */; };
 		FCB45A9C186B955B001DC91E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCB45A9A186B955B001DC91E /* InfoPlist.strings */; };
 		FCB45A9E186B955B001DC91E /* NestoriaMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB45A9D186B955B001DC91E /* NestoriaMapTests.m */; };
 		FCB76AAD18734EB40030EBA8 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB76AAC18734EB40030EBA8 /* DetailViewController.m */; };
+		FCCE8536188057DE00102ACE /* RefineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCE8535188057DE00102ACE /* RefineViewController.m */; };
+		FCCE8538188059A000102ACE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCCE8537188059A000102ACE /* Images.xcassets */; };
 		FCF775D9186C98280087C2A1 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF775D8186C98280087C2A1 /* MapAnnotation.m */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +55,6 @@
 		FCB45A82186B955A001DC91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		FCB45A84186B955A001DC91E /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		FCB45A85186B955A001DC91E /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		FCB45A8A186B955A001DC91E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FCB45A90186B955B001DC91E /* NestoriaMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NestoriaMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB45A91186B955B001DC91E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FCB45A99186B955B001DC91E /* NestoriaMapTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NestoriaMapTests-Info.plist"; sourceTree = "<group>"; };
@@ -62,6 +62,9 @@
 		FCB45A9D186B955B001DC91E /* NestoriaMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NestoriaMapTests.m; sourceTree = "<group>"; };
 		FCB76AAB18734EB40030EBA8 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		FCB76AAC18734EB40030EBA8 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		FCCE8534188057DD00102ACE /* RefineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefineViewController.h; sourceTree = "<group>"; };
+		FCCE8535188057DE00102ACE /* RefineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefineViewController.m; sourceTree = "<group>"; };
+		FCCE8537188059A000102ACE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FCF775D7186C98280087C2A1 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
 		FCF775D8186C98280087C2A1 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,9 +137,11 @@
 				FCB45A85186B955A001DC91E /* FirstViewController.m */,
 				FCB76AAB18734EB40030EBA8 /* DetailViewController.h */,
 				FCB76AAC18734EB40030EBA8 /* DetailViewController.m */,
+				FCCE8534188057DD00102ACE /* RefineViewController.h */,
+				FCCE8535188057DE00102ACE /* RefineViewController.m */,
 				FCF775D7186C98280087C2A1 /* MapAnnotation.h */,
 				FCF775D8186C98280087C2A1 /* MapAnnotation.m */,
-				FCB45A8A186B955A001DC91E /* Images.xcassets */,
+				FCCE8537188059A000102ACE /* Images.xcassets */,
 				FCB45A73186B955A001DC91E /* Supporting Files */,
 			);
 			path = NestoriaMap;
@@ -248,7 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCB45A83186B955A001DC91E /* Main_iPad.storyboard in Resources */,
-				FCB45A8B186B955A001DC91E /* Images.xcassets in Resources */,
+				FCCE8538188059A000102ACE /* Images.xcassets in Resources */,
 				FCB45A80186B955A001DC91E /* Main_iPhone.storyboard in Resources */,
 				FCB45A77186B955A001DC91E /* InfoPlist.strings in Resources */,
 			);
@@ -274,6 +279,7 @@
 				FCB45A79186B955A001DC91E /* main.m in Sources */,
 				FCF775D9186C98280087C2A1 /* MapAnnotation.m in Sources */,
 				FCB76AAD18734EB40030EBA8 /* DetailViewController.m in Sources */,
+				FCCE8536188057DE00102ACE /* RefineViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
